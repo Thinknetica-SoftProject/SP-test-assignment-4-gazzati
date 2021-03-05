@@ -16,4 +16,14 @@
 #
 ## Решение:
 
+data = File.read('data/4.txt').split("\n")
+sum = 0
 
+data.map do |gift|
+    sides = gift.split("x").collect{ |i| i.to_i }.sort
+    length, height, width = sides
+
+    sum += 2*length*width + 2*length*height + 2*height*width + length*height
+end
+
+puts sum

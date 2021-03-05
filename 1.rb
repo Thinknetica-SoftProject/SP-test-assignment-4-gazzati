@@ -16,6 +16,16 @@
 #
 ## Решение:
 
+data = File.read('data/1.txt')
 
+level = 0
 
+data.each_char do |c|
+    if c == '('
+        level += 1
+    elsif c == ')'
+        level -= 1
+    end
+end
 
+puts level

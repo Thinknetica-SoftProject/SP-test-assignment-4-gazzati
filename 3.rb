@@ -10,4 +10,12 @@
 #
 ## Решение:
 
+data = File.read('data/3.txt').split("\n")
+sum = 0
 
+data.map do |row|
+    values = row.split(" ").collect{ |i| i.to_i }.sort
+    sum += values.max - values.min
+end
+
+puts sum

@@ -16,3 +16,16 @@
 #
 ## Решение:
 
+require 'digest'
+
+input = gets.strip
+i = 0
+
+while 1
+    str = input + i.to_s
+    if Digest::MD5.hexdigest(str).slice!(0..4) == '00000'
+        puts i
+        break
+    end
+    i += 1
+end
